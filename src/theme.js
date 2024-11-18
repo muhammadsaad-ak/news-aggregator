@@ -25,4 +25,20 @@ export const darkTheme = createTheme({
             primary: "#fff",
         },
     },
+    components: {
+        MuiSvgIcon: {
+            styleOverrides: {
+                root: {
+                    color: "#fff",
+                },
+            },
+        },
+        MuiInputAdornment: {
+            styleOverrides: {
+                root: {
+                    color: "#fff",
+                },
+            },
+        },
+    },
 });

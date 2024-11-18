@@ -52,7 +52,16 @@ const Filters = ({ onFilterChange }) => {
           label="Filter by Date"
           type="date"
           fullWidth
-          slotProps={{ inputLabel: { shrink: true } }}
+          slotProps={{
+            inputLabel: { shrink: true },
+            input: {
+              sx: (theme) => ({
+                "& input::-webkit-calendar-picker-indicator": {
+                  filter: theme.palette.mode === "dark" ? "invert(1)" : "none",
+                },
+              }),
+            },
+          }}
           value={date}
           onChange={handleDateChange}
         />
