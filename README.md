@@ -1,70 +1,162 @@
-# Getting Started with Create React App
+# 📰 News Aggregator Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the News Aggregator! This project is a user-friendly, responsive web application that pulls articles from multiple news sources and displays them in a clean, easy-to-read format. It provides features for article search, filtering, and a personalized news feed with a dark mode toggle for enhanced user experience.
 
-## Available Scripts
+## 📋 Table of Contents
 
-In the project directory, you can run:
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [API Data Sources](#api-data-sources)
+- [Project Structure](#project-structure)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Docker Support](#docker-support)
+- [Dark Mode](#dark-mode)
+- [Code Quality](#code-quality)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. **Article Search and Filtering**
+   - Users can search for articles by keyword.
+   - Filter articles by date, category, and source.
+2. **Personalized News Feed**
+   - Customize your feed by selecting preferred sources, categories, and authors.
+3. **Dark Mode Toggle**
+   - Toggle between light and dark themes for a better reading experience.
+4. **Mobile-Responsive Design**
+   - Optimized for viewing on mobile devices.
+5. **Docker Support**
+   - Easily run the application in a Docker container.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+- React.js
+- Material-UI (MUI)
+- Axios
+- React Router
+- Docker
+- Node.js
+- GitHub Actions (for CI/CD)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🌐 API Data Sources
 
-### `npm run build`
+This project uses the following APIs:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. [NewsAPI](https://newsapi.org/)
+2. [The Guardian API](https://open-platform.theguardian.com/)
+3. [New York Times API](https://developer.nytimes.com/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📂 Project Structure
+```
+news-aggregator/
+├── public/                        # Public assets like HTML and icons
+│   ├── index.html                 # Main HTML file
+│   └── favicon.ico                # Favicon icon
+├── src/                           # All source code files
+│   ├── components/                # Reusable UI components
+│   │   ├── ArticleCard.jsx        # Component for displaying individual articles
+│   │   ├── Filters.jsx            # Component for filter options (category, date, etc.)
+│   │   ├── SearchBar.jsx          # Search input component for querying articles
+│   ├── pages/                     # Page-level components
+│   │   └── HomePage.jsx           # Homepage component, displaying articles
+│   ├── services/                  # Service layer for fetching data from APIs
+│   │   ├── newsService.js         # Functions to fetch news from APIs (NewsAPI, Guardian, etc.)
+│   ├── themes/                    # Theme-related files (light & dark mode)
+│   │   ├── theme.js               # Custom Material UI theme settings (dark/light mode)
+│   │   └── themeContext.js        # Context provider for theme toggling
+│   ├── App.jsx                    # Main component wrapping all pages and logic
+│   ├── index.js                   # Entry point for the React application
+│   └── styles.css                 # Global styles for the app
+├── Dockerfile                     # Dockerfile for containerization
+├── .env                           # Environment variables file for API keys
+├── .gitignore                     # Git ignore file for node_modules, build, etc.
+├── package.json                   # npm package configuration with dependencies and scripts
+├── README.md                      # Project documentation and instructions
+└── node_modules/                  # Node modules (generated after running `npm install`)
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚀 Installation
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Node.js (>= 18.x)
+- npm (>= 9.x)
+- Docker (for containerization)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Clone the Repository
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/your-username/news-aggregator.git
+cd news-aggregator
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Install Dependencies
+```
+npm install
+```
 
-## Learn More
+### Environment Variables
+Create a .env file in the root directory and add your API keys:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+REACT_APP_NEWSAPI_KEY=your_newsapi_key
+REACT_APP_GUARDIAN_KEY=your_guardian_key
+REACT_APP_NYT_KEY=your_nyt_key
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🖥️ Usage
 
-### Code Splitting
+### Run the Development Server
+```
+npm start
+```
+The application will be available at http://localhost:3000.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Build for Production
+```
+npm run build
+```
 
-### Analyzing the Bundle Size
+## 🐳 Docker Support
+This project includes a Docker configuration. To run the application using Docker:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Build Docker Image
+```
+docker build -t news-aggregator .
+```
 
-### Making a Progressive Web App
+### Run Docker Container
+```
+docker run -p 3000:3000 news-aggregator
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Alternatively, you can use Docker Compose:
+```
+docker-compose up
+```
+The app will be available at http://localhost:3000.
 
-### Advanced Configuration
+## 🌑 Dark Mode
+This application includes a dark mode feature. Use the toggle switch at the top of the page to switch between light and dark themes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## ✅ Code Quality
+The project follows best practices, including:
 
-### Deployment
+- DRY (Don't Repeat Yourself)
+- KISS (Keep It Simple, Stupid)
+- SOLID Principles
+- Linting and Formatting: Using ESLint and Prettier
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 📄 License
 
-### `npm run build` fails to minify
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+##📝 Acknowledgements
+
+NewsAPI
+The Guardian API
+New York Times API
+Material-UI
