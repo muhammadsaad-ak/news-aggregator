@@ -1,54 +1,71 @@
 // Filters.js
-import React, { useState } from 'react';
-import { FormControl, InputLabel, Select, MenuItem, TextField, Grid } from '@mui/material';
+import React, { useState } from "react";
+import {
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+  TextField,
+  Grid2,
+} from "@mui/material";
 
 const Filters = ({ onFilterChange }) => {
-  const [source, setSource] = useState('');
-  const [date, setDate] = useState('');
-  const [category, setCategory] = useState('');
+  const [source, setSource] = useState("");
+  const [date, setDate] = useState("");
+  const [category, setCategory] = useState("");
 
   const handleSourceChange = (event) => {
     setSource(event.target.value);
-    onFilterChange('source', event.target.value);
+    onFilterChange("source", event.target.value);
   };
 
   const handleDateChange = (event) => {
     setDate(event.target.value);
-    onFilterChange('date', event.target.value);
+    onFilterChange("date", event.target.value);
   };
 
   const handleCategoryChange = (event) => {
     setCategory(event.target.value);
-    onFilterChange('category', event.target.value);
+    onFilterChange("category", event.target.value);
   };
 
   return (
-    <Grid container spacing={2} sx={{ mb: 3 }}>
-      <Grid item xs={12} sm={4}>
+    <Grid2 container spacing={2} sx={{ mb: 3 }}>
+      <Grid2 item size={{ xs: 12, sm: 4 }}>
         <FormControl fullWidth>
-          <InputLabel>Source</InputLabel>
-          <Select value={source} onChange={handleSourceChange}>
+          <InputLabel shrink>Source</InputLabel>
+          <Select
+            notched
+            label="Source"
+            value={source}
+            onChange={handleSourceChange}
+          >
             <MenuItem value="">All Sources</MenuItem>
             <MenuItem value="newsapi">NewsAPI</MenuItem>
             <MenuItem value="guardian">The Guardian</MenuItem>
             <MenuItem value="nyt">New York Times</MenuItem>
           </Select>
         </FormControl>
-      </Grid>
-      <Grid item xs={12} sm={4}>
+      </Grid2>
+      <Grid2 item size={{ xs: 12, sm: 4 }}>
         <TextField
           label="Filter by Date"
           type="date"
           fullWidth
-          InputLabelProps={{ shrink: true }}
+          slotProps={{ inputLabel: { shrink: true } }}
           value={date}
           onChange={handleDateChange}
         />
-      </Grid>
-      <Grid item xs={12} sm={4}>
+      </Grid2>
+      <Grid2 item size={{ xs: 12, sm: 4 }}>
         <FormControl fullWidth>
-          <InputLabel>Category</InputLabel>
-          <Select value={category} onChange={handleCategoryChange}>
+          <InputLabel shrink>Category</InputLabel>
+          <Select
+            notched
+            label="Category"
+            value={category}
+            onChange={handleCategoryChange}
+          >
             <MenuItem value="">All Categories</MenuItem>
             <MenuItem value="technology">Technology</MenuItem>
             <MenuItem value="business">Business</MenuItem>
@@ -58,8 +75,8 @@ const Filters = ({ onFilterChange }) => {
             <MenuItem value="entertainment">Entertainment</MenuItem>
           </Select>
         </FormControl>
-      </Grid>
-    </Grid>
+      </Grid2>
+    </Grid2>
   );
 };
 

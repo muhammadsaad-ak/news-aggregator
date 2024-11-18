@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { TextField, Button, Box } from '@mui/material';
+import React, { useState } from "react";
+import { TextField, Button, Box } from "@mui/material";
 
 const SearchBar = ({ onSearch }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
 
   const handleSearch = () => {
     onSearch(query);
@@ -13,6 +13,7 @@ const SearchBar = ({ onSearch }) => {
       <TextField
         fullWidth
         label="Search for news..."
+        slotProps={{ inputLabel: { shrink: true } }}
         variant="outlined"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
