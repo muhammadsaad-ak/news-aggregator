@@ -154,7 +154,7 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## 📝 Acknowledgements
 
-NewsAPI
-The Guardian API
-New York Times API
-Material-UI
+- NewsAPI
+- The Guardian API
+- New York Times API
+- Material-UI
