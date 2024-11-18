@@ -13,9 +13,8 @@ Welcome to the News Aggregator! This project is a user-friendly, responsive web 
 - [Docker Support](#docker-support)
 - [Dark Mode](#dark-mode)
 - [Code Quality](#code-quality)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
 - [License](#license)
+- [Acknowledgements](#acknowledgements)
 
 ## ✨ Features
 
@@ -154,7 +153,7 @@ The project follows best practices, including:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-##📝 Acknowledgements
+## 📝 Acknowledgements
 
 NewsAPI
 The Guardian API
