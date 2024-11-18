@@ -10,8 +10,6 @@ import {
 export const fetchNewsFromNewsAPI = async (query, date, category) => {
   try {
     let url;
-
-    // If category is provided, use the 'top-headlines' endpoint
     if (category) {
       url = `${NEWS_API_TOP_HEADLINES_URL}?category=${category}&country=us&apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
     } else {
@@ -22,16 +20,12 @@ export const fetchNewsFromNewsAPI = async (query, date, category) => {
 
     const response = await fetch(url);
 
-    // Handle unauthorized API key error
     if (response.status === 401)
       throw new Error("Unauthorized: Invalid API Key");
 
     const data = await response.json();
 
-    // Handle missing data error
     if (!data || !data.articles) throw new Error("No data found");
-
-    // Map the response to a simplified format
     return data.articles.map((article) => ({
       title: article.title,
       url: article.url,
