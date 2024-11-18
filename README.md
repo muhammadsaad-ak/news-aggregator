@@ -147,7 +147,6 @@ The project follows best practices, including:
 - DRY (Don't Repeat Yourself)
 - KISS (Keep It Simple, Stupid)
 - SOLID Principles
-- Linting and Formatting: Using ESLint and Prettier
 
 ## 📄 License
 
