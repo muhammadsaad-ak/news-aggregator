@@ -1,8 +1,8 @@
-# 📰 News Aggregator Website
+#  News Aggregator Website 📰
 
 Welcome to the News Aggregator! This project is a user-friendly, responsive web application that pulls articles from multiple news sources and displays them in a clean, easy-to-read format. It provides features for article search, filtering, and a personalized news feed with a dark mode toggle for enhanced user experience.
 
-## 📋 Table of Contents
+## Table of Contents 📋 
 
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -16,7 +16,7 @@ Welcome to the News Aggregator! This project is a user-friendly, responsive web 
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
-## ✨ Features
+## Features
 
 1. **Article Search and Filtering**
    - Users can search for articles by keyword.
@@ -30,7 +30,7 @@ Welcome to the News Aggregator! This project is a user-friendly, responsive web 
 5. **Docker Support**
    - Easily run the application in a Docker container.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - React.js
 - Material-UI (MUI)
@@ -40,7 +40,7 @@ Welcome to the News Aggregator! This project is a user-friendly, responsive web 
 - Node.js
 - GitHub Actions (for CI/CD)
 
-## 🌐 API Data Sources
+## API Data Sources
 
 This project uses the following APIs:
 
@@ -48,7 +48,7 @@ This project uses the following APIs:
 2. [The Guardian API](https://open-platform.theguardian.com/)
 3. [New York Times API](https://developer.nytimes.com/)
 
-## 📂 Project Structure
+## Project Structure
 ```
 news-aggregator/
 ├── public/                        # Public assets like HTML and icons
@@ -77,7 +77,7 @@ news-aggregator/
 └── node_modules/                  # Node modules (generated after running `npm install`)
 ```
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -106,7 +106,7 @@ REACT_APP_GUARDIAN_KEY=your_guardian_key
 REACT_APP_NYT_KEY=your_nyt_key
 ```
 
-## 🖥️ Usage
+## Usage
 
 ### Run the Development Server
 ```
@@ -119,7 +119,7 @@ The application will be available at http://localhost:3000.
 npm run build
 ```
 
-## 🐳 Docker Support
+## Docker Support
 This project includes a Docker configuration. To run the application using Docker:
 
 ### Build Docker Image
@@ -138,21 +138,21 @@ docker-compose up
 ```
 The app will be available at http://localhost:3000.
 
-## 🌑 Dark Mode
+## Dark Mode
 This application includes a dark mode feature. Use the toggle switch at the top of the page to switch between light and dark themes.
 
-## ✅ Code Quality
+## Code Quality 
 The project follows best practices, including:
 
 - DRY (Don't Repeat Yourself)
 - KISS (Keep It Simple, Stupid)
 - SOLID Principles
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 📝 Acknowledgements
+## Acknowledgements
 
 - NewsAPI
 - The Guardian API
